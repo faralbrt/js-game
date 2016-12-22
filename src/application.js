@@ -4,8 +4,9 @@ $(document).ready(function()  {
   playerOne.loadCheckers();
   playerTwo.loadCheckers();
   var totalCheckers = playerOne.checkers.concat(playerTwo.checkers);
-  totalCheckers.forEach(function(checker) {
-    InsertPiece(checker);
-  });
+  refreshBoard(totalCheckers);
+  playerOne.moveChecker(24, 10);
+  playerOne.moveChecker(24, 10);
+  refreshBoard(totalCheckers);
 
 });
