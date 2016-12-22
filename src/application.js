@@ -3,4 +3,8 @@ $(document).ready(function()  {
   var playerTwo = new PlayerTwo();
   playerOne.loadCheckers();
   playerTwo.loadCheckers();
+  var totalCheckers = playerOne.checkers.concat(playerTwo.checkers);
+  totalCheckers.forEach(function(checker) {
+    InsertPiece(checker);
+  });
 });
