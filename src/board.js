@@ -7,5 +7,7 @@ Board.prototype.loadPoints = function() {
   for (var i = 0; i < 24; i ++) {
     obj[i + 1] = [];
   }
+  obj.finished = [];
+  obj.ate = [];
   return obj;
 };
