@@ -10,5 +10,6 @@ function refreshBoard(playerOne, playerTwo) {
 function insertPiece(checker) {
   var color = checker.color + "-piece";
   var position = checker.position;
-  $("tbody tr:nth-child("+ position +")").append("<div class=" + color + "></div>");
+  var div = $("tbody tr:nth-child("+ position +")").children().append("<div class=" + color  +  "></div>");
+  div.find("div").addClass("draggable");
 }
