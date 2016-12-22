@@ -3,10 +3,12 @@ $(document).ready(function()  {
   var playerTwo = new PlayerTwo();
   playerOne.loadCheckers();
   playerTwo.loadCheckers();
-  var totalCheckers = playerOne.checkers.concat(playerTwo.checkers);
-  refreshBoard(totalCheckers);
-  playerOne.moveChecker(24, 10);
-  playerOne.moveChecker(24, 10);
-  refreshBoard(totalCheckers);
-
+  refreshBoard(playerOne, playerTwo);
+  $(".update-board").on("submit", function(e) {
+    e.preventDefault();
+    var position = parseInt($(e.target).find("input[name='position']").val());
+    var move = parseInt($(e.target).find("input[name='move']").val());
+    playerOne.moveChecker(position, move);
+    refreshBoard(playerOne, playerTwo);
+  });
 });

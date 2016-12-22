@@ -1,6 +1,7 @@
-function refreshBoard(checkers) {
+function refreshBoard(playerOne, playerTwo) {
+  var totalCheckers = playerOne.checkers.concat(playerTwo.checkers);
   $("tr div").remove();
-  checkers.forEach(function(checker) {
+  totalCheckers.forEach(function(checker) {
     insertPiece(checker);
   });
 }
