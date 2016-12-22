@@ -1,13 +1,11 @@
 var Board = function() {
-  this.points = this.loadPoints();
+  this.points = {};
 };
 
 Board.prototype.loadPoints = function() {
-  var obj = {};
   for (var i = 0; i < 24; i ++) {
-    obj[i + 1] = [];
+    this.points[i + 1] = [];
   }
-  obj.finished = [];
-  obj.ate = [];
-  return obj;
+  this.points.finished = [];
+  this.points.ate = [];
 };
