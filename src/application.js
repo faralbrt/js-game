@@ -7,4 +7,5 @@ $(document).ready(function()  {
   totalCheckers.forEach(function(checker) {
     InsertPiece(checker);
   });
+
 });

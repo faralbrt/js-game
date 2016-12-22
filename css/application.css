@@ -3,6 +3,9 @@
   width: 600px;
   height: 400px;
   border: 5px solid black;
+  background-image: url("../img/board.jpg");
+  background-repeat: no-repeat;
+  background-size: 600px 400px;
 }
 .piece {
   width: 25px;
@@ -11,7 +14,7 @@
 }
 .bottom {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -20,7 +23,7 @@
 }
 .top {
   position: absolute;
-  top: 0;
+  top: 10px;
 }
 .red-piece {
   width: 25px;
@@ -36,28 +39,30 @@
   background-repeat: no-repeat;
   background-size: 25px 25px;
 }
-#one    {right: 0;}
-#two    {right: 50px;}
-#three  {right: 100px;}
-#four   {right: 150px;}
-#five   {right: 200px;}
-#six    {right: 250px;}
-#seven  {right: 300px;}
-#eight  {right: 350px;}
-#nine   {right: 400px;}
-#ten    {right: 450px;}
-#eleven {right: 500px;}
-#twelve {right: 550px;}
 
-#thirteen    {left: 0px;}
-#fourteen    {left: 50px;}
-#fifteen     {left: 100px;}
-#sixteen     {left: 150px;}
-#seventeen   {left: 200px;}
-#eighteen    {left: 250px;}
-#nineteen    {left: 300px;}
-#twenty      {left: 350px;}
-#twentyone   {left: 400px;}
-#twentytwo   {left: 450px;}
-#twentythree {left: 500px;}
-#twentyfour  {left: 550px;}
+
+#one    {right: 69px;}
+#two    {right: 104px;}
+#three  {right: 138px;}
+#four   {right: 172px;}
+#five   {right: 203px;}
+#six    {right: 238px;}
+#seven  {right: 338px;}
+#eight  {right: 371px;}
+#nine   {right: 404px;}
+#ten    {right: 437px;}
+#eleven {right: 471px;}
+#twelve {right: 505px;}
+
+#thirteen    {left: 70px;}
+#fourteen    {left: 105px;}
+#fifteen     {left: 139px;}
+#sixteen     {left: 171px;}
+#seventeen   {left: 205px;}
+#eighteen    {left: 239px;}
+#nineteen    {left: 339px;}
+#twenty      {left: 372px;}
+#twentyone   {left: 406px;}
+#twentytwo   {left: 438px;}
+#twentythree {left: 471px;}
+#twentyfour  {left: 506px;}

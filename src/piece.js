@@ -46,3 +46,10 @@ PlayerTwo.prototype.moveChecker = function(position, moves) {
     checker.position = "finished";
   }
 };
+function fullBoard() {
+  var arr = [];
+  for(var i = 1; i < 25; i ++) {
+    arr.push(new BlackChecker(i));
+  }
+  return arr;
+}
