@@ -1,5 +1,5 @@
-var WhiteChecker = function(position) {
-  this.color = "white";
+var BlackChecker = function(position) {
+  this.color = "black";
   this.position = position;
 };
 var RedChecker = function(position) {
@@ -13,10 +13,10 @@ var PlayerTwo = function () {
   this.checkers = [];
 };
 PlayerOne.prototype.loadCheckers = function() {
-  for(var i = 0; i < 2; i ++) {this.checkers.push(new WhiteChecker(24));}
-  for( i = 0; i < 5; i ++) {this.checkers.push(new WhiteChecker(13));}
-  for( i = 0; i < 3; i ++) {this.checkers.push(new WhiteChecker(8));}
-  for( i = 0; i < 5; i ++) {this.checkers.push(new WhiteChecker(6));}
+  for(var i = 0; i < 2; i ++) {this.checkers.push(new BlackChecker(24));}
+  for( i = 0; i < 5; i ++) {this.checkers.push(new BlackChecker(13));}
+  for( i = 0; i < 3; i ++) {this.checkers.push(new BlackChecker(8));}
+  for( i = 0; i < 5; i ++) {this.checkers.push(new BlackChecker(6));}
 };
 PlayerTwo.prototype.loadCheckers = function() {
   for(var i = 0; i < 2; i ++) {this.checkers.push(new RedChecker(1));}

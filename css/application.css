@@ -12,10 +12,29 @@
 .bottom {
   position: absolute;
   bottom: 0;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .top {
   position: absolute;
   top: 0;
+}
+.red-piece {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/red.png");
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+.black-piece {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/black.png");
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
 }
 #one    {right: 0;}
 #two    {right: 50px;}
