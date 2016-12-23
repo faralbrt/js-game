@@ -29,11 +29,11 @@ function dropPoints(args) {
 function dropPoint(point) {
   var div;
   if(point <= 12 && point > 0) {
-    div = "<div class=\"droppable\" style=\"position: absolute; bottom: 0; right: 0; width: 20px;height: 175px; margin: 0px; padding: 0px; border: 2px solid black; z-index: -1;\"></div>";
+    div = "<div class=\"droppable\" style=\"position: absolute; bottom: 0; right: 0; width: 20px;height: 175px; margin: 0px; padding: 0px; border: 1px solid yellow; z-index: 0;\"></div>";
     $("tbody tr:nth-child("+ point +")").prepend(div);
   }
-  else if(point > 13 && point < 25) {
-    div = "<div class=\"droppable\" style=\"position: absolute; top: 0; left: 0; width: 20px;height: 175px; margin: 0px; padding: 0px; border: 2px solid black; z-index: -1;\"></div>";
+  else if(point >= 13 && point < 25) {
+    div = "<div class=\"droppable\" style=\"position: absolute; top: 0; left: 0; width: 20px;height: 175px; margin: 0px; padding: 0px; border: 1px solid yellow; z-index: 0;\"></div>";
     $("tbody tr:nth-child("+ point +")").prepend(div);
   }
 }

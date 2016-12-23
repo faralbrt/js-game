@@ -11,8 +11,12 @@ $(document).ready(function()  {
       revert: "invalid",
       cursor: "move",
       start: function(event) {
+        $("div.droppable").remove();
         if($(event.target).attr('class').includes("black")) {
           dropPoints({opponent: playerTwo});
+        }
+        else if($(event.target).attr('class').includes('red')) {
+          dropPoints({opponent: playerOne});
         }
       }
     });
