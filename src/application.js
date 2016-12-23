@@ -26,6 +26,7 @@ $(document).ready(function()  {
       var oldPosition = $("tr").index(ui.draggable.parent().parent()) + 1;
       var newPosition = $("tr").index($(this).parent().parent()) + 1;
       var moves = Math.abs(oldPosition - newPosition);
+      outcome.innerText = outcome.innerText.replace(moves.toString(), "");
       var item = ui.draggable.remove();
       var td = $(this).parent();
       item.css("position", "static");
