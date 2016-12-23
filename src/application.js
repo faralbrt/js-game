@@ -38,6 +38,7 @@ $(document).ready(function()  {
   });
   $("#dice").on("click", function(e) {
     e.preventDefault();
+    $("#dice-roll")[0].play();
     var outcome = dice.roll();
     $("#outcome").text(outcome);
   });
