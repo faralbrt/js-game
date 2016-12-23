@@ -4,13 +4,6 @@ $(document).ready(function()  {
   playerOne.loadCheckers();
   playerTwo.loadCheckers();
   refreshBoard(playerOne, playerTwo);
-  $(".update-board").on("submit", function(e) {
-    e.preventDefault();
-    var position = parseInt($(e.target).find("input[name='position']").val());
-    var move = parseInt($(e.target).find("input[name='move']").val());
-    playerOne.moveChecker(position, move);
-    refreshBoard(playerOne, playerTwo);
-  });
   $( function() {
     dropPoints();
     $(".draggable").draggable({containment: "#board",scroll: false, revert: "invalid", cursor: "move" });
@@ -22,7 +15,8 @@ $(document).ready(function()  {
       var td = $(this).parent();
       item.css("position", "static");
       td.prepend(item);
-      playerOne.moveChecker(oldPosition, moves);
+      if(ui.draggable.attr('class').includes("black")) {playerOne.moveChecker(oldPosition, moves);}
+      else if(ui.draggable.attr('class').includes("red")) {playerTwo.moveChecker(oldPosition, moves);}
       refreshBoard(playerOne, playerTwo);
     }});
   });
