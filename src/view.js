@@ -21,10 +21,11 @@ function dropPoints(args) {
   var position = $("tr").index(args.checker.parent().parent()) + 1;
   var color = args.color;
   var opponentPoints = opponent.checkers.map(function(checker) {return checker.position;});
-  for(var i = 0; i < 25; i ++) {
+  var moves = args.moves.split(",");
+  for(var i = 1; i < 25; i ++) {
     if (opponentPoints.filter(function(point) {return point === i;}).length < 2) {
-      if(color === "black" && i < position) {dropPoint(i);}
-      if(color === "red" && i > position) {dropPoint(i);}
+      if(color === "black" && i < position && moves.includes((position - i).toString())) {dropPoint(i);}
+      if(color === "red" && i > position && moves.includes((i - position).toString())) {dropPoint(i);}
     }
   }
 }
