@@ -4,6 +4,10 @@ function refreshBoard(playerOne, playerTwo) {
   totalCheckers.forEach(function(checker) {
     insertPiece(checker);
   });
+  $( function() {
+   $(".draggable").draggable({containment: ".board",revert: "invalid", cursor: "move" });
+   $(".droppable").droppable({});
+  });
 }
 
 
