@@ -40,4 +40,8 @@ function dropPoint(point) {
     div = "<div class=\"droppable\" style=\"position: absolute; top: 0; left: 0; width: 20px;height: 175px; margin: 0px; padding: 0px; border: 1px solid yellow; z-index: 0;\"></div>";
     $("tbody tr:nth-child("+ point +")").find("td").prepend(div);
   }
+  else if(point === 25) {
+    div = "<div class=\"droppable\" style=\"left: 271px; height: 171px; top: 111px; width: 53px; border: 1px solid yellow; z-index: 0;\"></div>";
+    $("tbody tr:nth-child(25)").find("td").prepend(div);
+  }
 }
