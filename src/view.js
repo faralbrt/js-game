@@ -22,7 +22,7 @@ function dropPoints(args) {
   var color = args.color;
   var opponentPoints = opponent.checkers.map(function(checker) {return checker.position;});
   for(var i = 0; i < 25; i ++) {
-    if (!opponentPoints.includes(i)) {
+    if (opponentPoints.filter(function(point) {return point === i;}).length < 2) {
       if(color === "black" && i < position) {dropPoint(i);}
       if(color === "red" && i > position) {dropPoint(i);}
     }
