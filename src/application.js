@@ -9,29 +9,29 @@ $(document).ready(function()  {
       containment: "#board",
       scroll: false,
       revert: "invalid",
-      cursor: "move",
-      start: function(event) {
-        $("div.droppable").remove();
-        if($(event.target).attr('class').includes("black")) {
-          dropPoints({opponent: playerTwo});
-        }
-        else if($(event.target).attr('class').includes('red')) {
-          dropPoints({opponent: playerOne});
-        }
-      }
+      cursor: "move"
     });
   });
-  $(".droppable").droppable({
-    drop: function( event, ui ) {
-    var oldPosition = $("tr").index(ui.draggable.parent().parent()) + 1;
-    var newPosition = $("tr").index($(this).parent().parent()) + 1;
-    var moves = Math.abs(oldPosition - newPosition);
-    var item = ui.draggable.remove();
-    var td = $(this).parent();
-    item.css("position", "static");
-    td.prepend(item);
-    if(ui.draggable.attr('class').includes("black")) {playerOne.moveChecker(oldPosition, moves);}
-    else if(ui.draggable.attr('class').includes("red")) {playerTwo.moveChecker(oldPosition, moves);}
-    refreshBoard(playerOne, playerTwo);
-  }});
+  $("tbody").on("mousedown", ".draggable", function() {
+    $("div.droppable").remove();
+    if($(event.target).attr('class').includes("black")) {
+      dropPoints({opponent: playerTwo});
+    }
+    else if($(event.target).attr('class').includes('red')) {
+      dropPoints({opponent: playerOne});
+    }
+    $(".droppable").droppable({
+    drop: function(event, ui) {
+      var oldPosition = $("tr").index(ui.draggable.parent().parent()) + 1;
+      var newPosition = $("tr").index($(this).parent().parent()) + 1;
+      var moves = Math.abs(oldPosition - newPosition);
+      var item = ui.draggable.remove();
+      var td = $(this).parent();
+      item.css("position", "static");
+      td.prepend(item);
+      if(ui.draggable.attr('class').includes("black")) {playerOne.moveChecker(oldPosition, moves);}
+      else if(ui.draggable.attr('class').includes("red")) {playerTwo.moveChecker(oldPosition, moves);}
+      refreshBoard(playerOne, playerTwo);
+    }});
+  });
 });
