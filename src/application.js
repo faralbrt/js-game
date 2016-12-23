@@ -15,10 +15,10 @@ $(document).ready(function()  {
   $("tbody").on("mousedown", ".draggable", function() {
     $("div.droppable").remove();
     if($(event.target).attr('class').includes("black")) {
-      dropPoints({opponent: playerTwo});
+      dropPoints({color: "black", checker: $(event.target), opponent: playerTwo});
     }
     else if($(event.target).attr('class').includes('red')) {
-      dropPoints({opponent: playerOne});
+      dropPoints({color: "red", checker: $(event.target), opponent: playerOne});
     }
     $(".droppable").droppable({
     drop: function(event, ui) {

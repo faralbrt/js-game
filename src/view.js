@@ -18,10 +18,13 @@ function insertPiece(checker) {
 
 function dropPoints(args) {
   var opponent = args.opponent;
+  var position = $("tr").index(args.checker.parent().parent()) + 1;
+  var color = args.color;
   var opponentPoints = opponent.checkers.map(function(checker) {return checker.position;});
   for(var i = 0; i < 25; i ++) {
     if (!opponentPoints.includes(i)) {
-      dropPoint(i);
+      if(color === "black" && i < position) {dropPoint(i);}
+      if(color === "red" && i > position) {dropPoint(i);}
     }
   }
 }
