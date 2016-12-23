@@ -1,3 +1,11 @@
+div {
+  position: relative;
+}
+td {
+  position: relative;
+}
+
+
 #board {
   position: relative;
   width: 600px;
