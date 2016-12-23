@@ -28,7 +28,7 @@ PlayerOne.prototype.moveChecker = function(position, moves) {
   var checker = this.checkers.find(function(checker) {
     return checker.position === position;
   });
-  if(checker.position - moves > 1) {
+  if(checker.position - moves >= 1) {
     checker.position -= moves;
   }
   else {
@@ -39,7 +39,7 @@ PlayerTwo.prototype.moveChecker = function(position, moves) {
   var checker = this.checkers.find(function(checker){
     return checker.position === position;
   });
-  if(checker.position + moves < 24) {
+  if(checker.position + moves <= 24) {
     checker.position += moves;
   }
   else {

@@ -1,21 +1,12 @@
 function refreshBoard(playerOne, playerTwo) {
   var totalCheckers = playerOne.checkers.concat(playerTwo.checkers);
-  $("tr div").remove();
+  $("tbody").find("div:not(.droppable)").remove();
   totalCheckers.forEach(function(checker) {
     insertPiece(checker);
   });
-  dropPoints();
-  $( function() {
-   $(".draggable").draggable({containment: "#board",scroll: false, revert: "invalid", cursor: "move" });
-   $(".droppable").droppable({ drop: function( event, ui ) {
-        var originalPosition = $("tr").index(ui.draggable.offsetParent()) + 1;
-        var item = ui.draggable.remove();
-        var td = $(this).parent();
-        item.css("position", "static");
-        td.prepend(item);
-      }});
-  });
+  $(".draggable").draggable({containment: "#board",scroll: false, revert: "invalid", cursor: "move" });
 }
+
 
 
 function insertPiece(checker) {

@@ -11,4 +11,19 @@ $(document).ready(function()  {
     playerOne.moveChecker(position, move);
     refreshBoard(playerOne, playerTwo);
   });
+  $( function() {
+    dropPoints();
+    $(".draggable").draggable({containment: "#board",scroll: false, revert: "invalid", cursor: "move" });
+    $(".droppable").droppable({ drop: function( event, ui ) {
+      var oldPosition = $("tr").index(ui.draggable.parent().parent()) + 1;
+      var newPosition = $("tr").index($(this).parent().parent()) + 1;
+      var moves = Math.abs(oldPosition - newPosition);
+      var item = ui.draggable.remove();
+      var td = $(this).parent();
+      item.css("position", "static");
+      td.prepend(item);
+      playerOne.moveChecker(oldPosition, moves);
+      refreshBoard(playerOne, playerTwo);
+    }});
+  });
 });
