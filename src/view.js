@@ -6,6 +6,7 @@ function refreshBoard(playerOne, playerTwo) {
   });
   $(".draggable").draggable({containment: "#board",scroll: false, revert: "invalid", cursor: "move" });
 }
+// this is a comment
 
 
 
